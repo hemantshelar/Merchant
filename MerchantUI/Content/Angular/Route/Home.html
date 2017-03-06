@@ -1,3 +1,12 @@
 ﻿<h1>Home</h1>
 
 <h1>{{Test}}</h1>
+
+<button class="btn btn-default" ng-click="getMerchants()">Test</button>
+{{pagination.total_pages}}
+
+<ul class="pagination" ng-hide="pagination === undefined">
+    <li ng-repeat="n in [].constructor(pagination.total_pages) track by $index">
+        <button ng-click="nextPage($index)" class="btn btn-primary">{{$index+1}}</button>
+    </li>
+</ul>
