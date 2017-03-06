@@ -6,26 +6,29 @@
     </li>
 </ul>
 
-<table class="table">
-    <thead>
-        <tr>           
-            <th>Display Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Status</th>
-            <th>Address</th>
-            <th>Logo</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="merchant in merchants">           
-            <td>{{merchant.display_name}}</td>
-            <td>{{merchant.email}}</td>
-            <td>{{merchant.phone}}</td>
-            <td>{{merchant.status}}</td>
-            <td>{{merchant.displayAddress}}</td>
-            <td><img ng-src="{{merchant.logo.path_to_file}}" /></td>
-        </tr>
-    </tbody>
-</table>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Display Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Status</th>
+                <th>Address</th>
+                <th>Logo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="merchant in merchants">
+                <td>{{merchant.display_name}}</td>
+                <td>{{merchant.email}}</td>
+                <td>{{merchant.phone}}</td>
+                <td>{{merchant.status}}</td>
+                <td>{{merchant.displayAddress}}</td>
+                <td><img ng-src="{{merchant.logo}}" /></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 

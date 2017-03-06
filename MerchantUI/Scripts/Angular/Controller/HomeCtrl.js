@@ -22,13 +22,14 @@ merchantModule.controller('HomeCtrl', function ($scope, $http, MerchantService) 
                 merchant.status = response.data.data[i].status;
                 merchant.logo = response.data.data[i].logo.path_to_file;
 
+
                 var addr = response.data.data[i].address;
 
                 var fullAddress = addr.address1;
                 if (addr.address2) {
-                    fullAddress = fullAddress + ", " + addr.address2;
+                    fullAddress = fullAddress + ",\r\n " + addr.address2;
                 }
-                fullAddress = fullAddress + ", " + addr.suburb;
+                fullAddress = fullAddress + ",\r\n " + addr.suburb;
 
                 fullAddress = fullAddress + " - " + addr.postcode;
 
@@ -38,7 +39,7 @@ merchantModule.controller('HomeCtrl', function ($scope, $http, MerchantService) 
             }
 
             $scope.pagination = response.data.pagination;
-            $scope.merchants = response.data.data;
+            $scope.merchants = result;
         });
     }
 
