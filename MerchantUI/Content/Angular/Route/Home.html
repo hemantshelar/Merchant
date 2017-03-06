@@ -1,12 +1,31 @@
 ﻿<h1>Home</h1>
 
-<h1>{{Test}}</h1>
-
-<button class="btn btn-default" ng-click="getMerchants()">Test</button>
-{{pagination.total_pages}}
-
 <ul class="pagination" ng-hide="pagination === undefined">
     <li ng-repeat="n in [].constructor(pagination.total_pages) track by $index">
         <button ng-click="nextPage($index)" class="btn btn-primary">{{$index+1}}</button>
     </li>
 </ul>
+
+<table class="table">
+    <thead>
+        <tr>           
+            <th>Display Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Status</th>
+            <th>Address</th>
+            <th>Logo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="merchant in merchants">           
+            <td>{{merchant.display_name}}</td>
+            <td>{{merchant.email}}</td>
+            <td>{{merchant.phone}}</td>
+            <td>{{merchant.status}}</td>
+            <td>{{merchant.displayAddress}}</td>
+            <td><img ng-src="{{merchant.logo.path_to_file}}" /></td>
+        </tr>
+    </tbody>
+</table>
+

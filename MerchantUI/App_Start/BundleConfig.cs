@@ -16,9 +16,10 @@ namespace MerchantUI
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                  "~/Scripts/angular/init.js"
+                  , "~/Scripts/angular/Model/*.js"
                 , "~/Scripts/angular/Directives/*.js"
                 , "~/Scripts/angular/Services/*.js"
-                , "~/Scripts/angular/Model/*.js"
+               
                 , "~/Scripts/angular/Controller/*.js"
                 ));
 

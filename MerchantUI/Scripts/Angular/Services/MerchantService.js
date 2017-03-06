@@ -20,7 +20,7 @@ merchantModule.service('MerchantService', function ($http, $q) {
             method: 'GET'
         }).then(function (response) {
             console.log('got data');
-            defer.resolve(response.data);
+            defer.resolve(response);
         });
 
         return defer.promise;
