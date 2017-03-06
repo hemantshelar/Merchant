@@ -27,6 +27,7 @@ namespace MerchantDAL
 
         public void Update(T updatedT)
         {
+            updatedT.date_modified = DateTime.Now;
             throw new NotImplementedException();
         }
 
@@ -43,6 +44,8 @@ namespace MerchantDAL
 
         public void Add(T newEntity)
         {
+            newEntity.date_modified = DateTime.Now;
+            newEntity.date_created = DateTime.Now;
             _entities.Add(newEntity);
         }
 

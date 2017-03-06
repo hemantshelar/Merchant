@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\..\..\..\..\data\TFS\InterviewQuestions\SecureAPI2013\Dependencies\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -94,6 +97,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="Controllers\ValuesControllerTest.cs" />
+    <Compile Include="UnitTestMerchantDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -105,6 +109,10 @@
     <ProjectReference Include="..\..\MerchantAPI\MerchantAPI.csproj">
       <Project>{A02F8560-283F-4CE2-95A6-03E3DC40051D}</Project>
       <Name>MerchantAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MerchantDAL.csproj">
+      <Project>{4b34d78d-00b4-466b-a7df-08ef3bba7471}</Project>
+      <Name>MerchantDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

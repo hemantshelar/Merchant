@@ -16,17 +16,26 @@ namespace MerchantDAL
         MerchantDbContext _dbContext = new MerchantDbContext(connectionString);
 
         public IRepository<Merchant> MerchantRepository;
+        public IRepository<Address> AddressRepository;
        
 
         public UnitOfWork()
         {
             MerchantRepository = new Repository<Merchant>(_dbContext);
+            AddressRepository = new Repository<Address>(_dbContext);
         }
 
 
         public void SaveChanges()
         {
-            _dbContext.SaveChanges();
+            try
+            {
+                _dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
     }

@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DbEntities\Address.cs" />
     <Compile Include="DbEntities\DbEntity.cs" />
     <Compile Include="DbEntities\Merchant.cs" />
     <Compile Include="IRepository.cs" />
