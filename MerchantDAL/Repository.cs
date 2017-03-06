@@ -28,7 +28,8 @@ namespace MerchantDAL
         public void Update(T updatedT)
         {
             updatedT.date_modified = DateTime.Now;
-            throw new NotImplementedException();
+            _entities.Attach(updatedT);
+            _context.Entry(updatedT).State = EntityState.Modified;
         }
 
         public void Delete(int id)
@@ -49,7 +50,7 @@ namespace MerchantDAL
             _entities.Add(newEntity);
         }
 
-        public List<dynamic> Get(System.Linq.Expressions.Expression<Func<T, bool>> predicate = null, int pageNo = -1, int pageSize = 10)
+        public List<T> Get(System.Linq.Expressions.Expression<Func<T, bool>> predicate = null, int pageNo = -1, int pageSize = 10)
         {
             if (predicate == null)
             {
@@ -62,7 +63,7 @@ namespace MerchantDAL
                 result = result.Skip((pageNo - 1) * pageSize).Take(pageSize);
             }
 
-            List<dynamic> dynamicResult = result.ToListAsync<T>() as List<dynamic>;
+            List<T> dynamicResult = result.ToList();
             return dynamicResult;
         }
 

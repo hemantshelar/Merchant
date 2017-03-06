@@ -67,26 +67,43 @@ namespace MerchantAPI.Tests
             // TODO: Add test logic here
             //
             UnitOfWork uow = new UnitOfWork();
+
             uow.MerchantRepository.Add(new MerchantDAL.DbEntities.Merchant
             {
-                _id = "abcd3"              
-                ,display_name = "test display name"
-                ,email = "email@a.com"
-                ,logo = "uri"
-                ,phone = "0478415726"
-                ,registered_name = "name registered"
-                ,status = "Active"
+                _id = "abcd5"
+                ,
+                display_name = "test display name"
+                ,
+                email = "email@a.com"
+                ,
+                logo = "uri"
+                ,
+                phone = "0478415726"
+                ,
+                registered_name = "name registered"
+                ,
+                status = "Active"
             });
             uow.SaveChanges();
 
-            uow.AddressRepository.Add(new MerchantDAL.DbEntities.Address
+            Address addr = new MerchantDAL.DbEntities.Address
             {
-                address1 = "address1",
-                address2 = "Address 2",
+                address1 = "address1 ",
+                address2 = "Address",
                 postcode = "2148",
-                state = "NSW",
-                UserId = "abcd3"
-            });
+                state = "NSW new",
+                UserId = "abcd5"
+            };
+
+            uow.AddressRepository.Add(addr);
+
+            uow.SaveChanges();
+
+            addr.country = "Australia";
+            addr.address2 = "new";
+
+
+            uow.AddressRepository.Update(addr);
 
             uow.SaveChanges();
         }
