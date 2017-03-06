@@ -13,14 +13,19 @@ namespace MerchantDAL
     {
         //Storing it here for unit testing.
         private static readonly string connectionString = @"Data Source=(localdb)\v11.0;Initial Catalog=MerchantsDb;Integrated Security=True";
-        MerchantDbContext _dbContext = new MerchantDbContext(connectionString);
+        MerchantDbContext _dbContext = null;
 
         public IRepository<Merchant> MerchantRepository;
         public IRepository<Address> AddressRepository;
        
 
-        public UnitOfWork()
+        public UnitOfWork(string strConnectionString)
         {
+            if (strConnectionString == string.Empty)
+            {
+                strConnectionString = connectionString;
+            }
+            _dbContext = new MerchantDbContext(strConnectionString);
             MerchantRepository = new Repository<Merchant>(_dbContext);
             AddressRepository = new Repository<Address>(_dbContext);
         }

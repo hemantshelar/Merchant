@@ -17,6 +17,7 @@ namespace MerchantDAL
         void Update(T updatedT);
         void Delete(int id);
         void Delete(T tToBeDeleted);
+        void Delete(Expression<Func<T, bool>> predicate);
 
         void SaveChanges();
     }

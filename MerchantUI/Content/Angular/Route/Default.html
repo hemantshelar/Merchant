@@ -1,1 +1,126 @@
-﻿<h1>Default...</h1>
+﻿<h1>Merchant coading test</h1>
+<ul>
+    <li>Click <a href="/#/Home">here</a> to see Part 1 - Front End test  </li>
+    <li>I have deployed web api <a href="http://merchantapitest.azurewebsites.net/">here</a></li>
+    <li>Source code is checked in <a href="https://github.com/hemantshelar/Merchant">here</a></li>
+</ul>
+
+<div>
+    <h3>Web API endpoints</h3>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Operation</th>
+                <th>URI</th>
+                <td>Header</td>
+                <td>Body</td>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Get</td>
+                <td>http://merchantapitest.azurewebsites.net/api/Merchant</td>
+                <td>User-Agent: Fiddler
+                        Host: merchantapitest.azurewebsites.net
+                        Content-Length: 0
+                        Content-Type: application/json;
+                </td>
+                <td>NA</td>
+                <td>Fetch all records</td>       
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>http://merchantapitest.azurewebsites.net/api/Merchant/abcd7</td>
+                <td>User-Agent: Fiddler
+Host: merchantapitest.azurewebsites.net
+Content-Length: 0
+Content-Type: application/json;
+</td>
+                <td>NA</td>
+                <td>Fetch record whose id = abcd7</td>
+            </tr>
+
+
+            <tr>
+                <td>GET</td>
+                <td>http://merchantapitest.azurewebsites.net/api/Merchant/active</td>
+                <td>User-Agent: Fiddler
+Host: merchantapitest.azurewebsites.net
+Content-Length: 0
+Content-Type: application/json;
+</td>
+                <td>NA</td>
+                <td>Returns list of all active merchants.</td>
+            </tr>
+
+            <tr>
+                <td>DELETE</td>
+                <td>http://merchantapitest.azurewebsites.net/api/Merchant/abcd9</td>
+                <td>User-Agent: Fiddler
+Host: merchantapitest.azurewebsites.net
+Content-Length: 0
+Content-Type: application/json;
+</td>
+                <td>NA</td>
+                <td>Deletes record with id abcd9</td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>http://merchantapitest.azurewebsites.net/api/Merchant</td>       
+                <td>
+                    
+                        User-Agent: Fiddler
+                        Host: merchantapitest.azurewebsites.net
+                        Content-Length: 195
+                        Content-Type: application/json;
+                    
+                </td>
+                <td>
+                    
+                        {
+                             _id: 'abcd9'
+                            ,display_name: 'name through fiddler'
+                            ,email: 'email fiddler'
+                            ,logo: 'logo fiddler'
+                            ,phone: 'phone fiddler'
+                            ,registered_name: 'registered_name fiddler'
+                            ,status: 'active'
+                       }                   
+                </td>
+                <td>
+                    Cretes new record.
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>PUT</td>
+                <td>http://merchantapitest.azurewebsites.net/api/Merchant</td>
+                <td>
+
+                    User-Agent: Fiddler
+                    Host: merchantapitest.azurewebsites.net
+                    Content-Length: 195
+                    Content-Type: application/json;
+
+                </td>
+                <td>
+
+                    {
+                    _id: 'abcd9'
+                    ,display_name: 'name through fiddler'
+                    ,email: 'email fiddler'
+                    ,logo: 'logo fiddler'
+                    ,phone: 'phone fiddler'
+                    ,registered_name: 'registered_name fiddler'
+                    ,status: 'active'
+                    }
+                </td>
+                <td>
+                    Updates existing record record.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

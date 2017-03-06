@@ -66,7 +66,7 @@ namespace MerchantAPI.Tests
             //
             // TODO: Add test logic here
             //
-            UnitOfWork uow = new UnitOfWork();
+            UnitOfWork uow = new UnitOfWork("");
 
             uow.MerchantRepository.Add(new MerchantDAL.DbEntities.Merchant
             {

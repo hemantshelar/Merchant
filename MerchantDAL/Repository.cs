@@ -71,5 +71,17 @@ namespace MerchantDAL
         {
             await _context.SaveChangesAsync();
         }
+
+
+        public void Delete(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
+        {
+            var result = _entities.Where(predicate);
+            if (result == null)
+                throw new Exception("No result foud.");
+            foreach (var item in result)
+            {
+                _entities.Remove(item);
+            }
+        }
     }
 }
