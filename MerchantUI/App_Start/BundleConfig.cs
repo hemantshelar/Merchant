@@ -19,7 +19,6 @@ namespace MerchantUI
                   , "~/Scripts/angular/Model/*.js"
                 , "~/Scripts/angular/Directives/*.js"
                 , "~/Scripts/angular/Services/*.js"
-               
                 , "~/Scripts/angular/Controller/*.js"
                 ));
 

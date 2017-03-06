@@ -127,6 +127,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\Angular\Controller\HomeCtrl.js" />
+    <Content Include="Scripts\Angular\Directives\Test.js" />
     <Content Include="Scripts\Angular\init.js" />
     <Content Include="Scripts\Angular\Model\models.js" />
     <Content Include="Scripts\Angular\Services\MerchantService.js" />
@@ -164,7 +165,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\Angular\Directives\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
